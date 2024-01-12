@@ -1,0 +1,172 @@
+# ################################################################ #
+# THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
+# FOR SIMPLE EXAMPLE MAPPINGS LOOK FURTHER DOWN THIS FILE..        #
+# ################################################################ #
+
+# A list of all built-in modifier and literal keywords can
+# be found at https://github.com/koekeishiya/skhd/issues/1
+#
+# A hotkey is written according to the following rules:
+#
+#   hotkey       = <mode> '<' <action> | <action>
+#
+#   mode         = 'name of mode' | <mode> ',' <mode>
+#
+#   action       = <keysym> '[' <proc_map_lst> ']' | <keysym> '->' '[' <proc_map_lst> ']'
+#                  <keysym> ':' <command>          | <keysym> '->' ':' <command>
+#                  <keysym> ';' <mode>             | <keysym> '->' ';' <mode>
+#
+#   keysym       = <mod> '-' <key> | <key>
+#
+#   mod          = 'modifier keyword' | <mod> '+' <mod>
+#
+#   key          = <literal> | <keycode>
+#
+#   literal      = 'single letter or built-in keyword'
+#
+#   keycode      = 'apple keyboard kVK_<Key> values (0x3C)'
+#
+#   proc_map_lst = * <proc_map>
+#
+#   proc_map     = <string> ':' <command> | <string>     '~' |
+#                  '*'      ':' <command> | '*'          '~'
+#
+#   string       = '"' 'sequence of characters' '"'
+#
+#   command      = command is executed through '$SHELL -c' and
+#                  follows valid shell syntax. if the $SHELL environment
+#                  variable is not set, it will default to '/bin/bash'.
+#                  when bash is used, the ';' delimeter can be specified
+#                  to chain commands.
+#
+#                  to allow a command to extend into multiple lines,
+#                  prepend '\' at the end of the previous line.
+#
+#                  an EOL character signifies the end of the bind.
+#
+#   ->           = keypress is not consumed by skhd
+#
+#   *            = matches every application not specified in <proc_map_lst>
+#
+#   ~            = application is unbound and keypress is forwarded per usual, when specified in a <proc_map>
+#
+# A mode is declared according to the following rules:
+#
+#   mode_decl = '::' <name> '@' ':' <command> | '::' <name> ':' <command> |
+#               '::' <name> '@'               | '::' <name>
+#
+#   name      = desired name for this mode,
+#
+#   @         = capture keypresses regardless of being bound to an action
+#
+#   command   = command is executed through '$SHELL -c' and
+#               follows valid shell syntax. if the $SHELL environment
+#               variable is not set, it will default to '/bin/bash'.
+#               when bash is used, the ';' delimeter can be specified
+#               to chain commands.
+#
+#               to allow a command to extend into multiple lines,
+#               prepend '\' at the end of the previous line.
+#
+#               an EOL character signifies the end of the bind.
+#
+#   litteral names = return
+#                    tab
+#                    space
+#                    backspace
+#                    escape
+#                    fn
+#                    cmd
+#                    lcmd
+#                    rcmd
+#                    shift
+#                    lshift
+#                    rshift
+#                    alt
+#                    lalt
+#                    ralt
+#                    ctrl
+#                    lctrl
+#                    rctrl
+#
+#   combinations = hyper = shift + alt + cmd + ctrl
+#                  meh   = shift + alt + ctrl
+#
+
+# ##################### #
+#                       #
+#    RELOAD SERVICE     #
+#                       #
+# ##################### #
+
+shift + ctrl - s : skhd --restart-service --config /Users/bdumesnildot/.config/skhd/.skhdrc
+shift + ctrl - y : yabai --restart-service
+
+
+# ##################### #
+#                       #
+#     APPLICATIONS      #
+#                       #
+# ##################### #
+
+hyper - space : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Finder"
+hyper - f : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Finder"
+hyper - p : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "System Settings"
+hyper - return : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Warp"
+hyper - w : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Warp"
+hyper - a: /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Arc"
+hyper - v : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Visual Studio Code"
+hyper - i : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Insomnia"
+hyper - d : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Docker"
+hyper - f : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Figma"
+hyper - s : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Slack"
+hyper - m : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Spotify"
+
+
+# ##################### #
+#                       #
+#         YABAI         #
+#                       #
+# ##################### #
+
+## LAYOUT MANAGEMENT
+# toggle tiling / floating
+rcmd - space : /Users/bdumesnildot/Scripts/yabai/toggleLayout.sh
+rcmd - 0x2E : yabai -m window --focus next || yabai -m window --focus first
+
+
+## MONITORS MANAGEMENT
+# focus previous / next space
+rcmd - m : yabai -m display --focus next
+rcmd - l : yabai -m display --focus prev
+
+
+## WINDOWS MANAGEMENT
+# toggle window fullscreen zoom
+rcmd + rshift - space : yabai -m window --toggle zoom-fullscreen
+
+# float / unfloat window and center on screen
+rcmd + rshift - f : yabai -m window --toggle float;\
+                    yabai -m window --grid 4:4:1:1:2:2
+
+# focus window
+rcmd - z : yabai -m window --focus north
+rcmd - d : yabai -m window --focus east
+rcmd - s : yabai -m window --focus south
+rcmd - q : yabai -m window --focus west
+
+# swap managed window
+rcmd + rshift - z : yabai -m window --swap north
+rcmd + rshift - d : yabai -m window --swap east
+rcmd + rshift - s : yabai -m window --swap south
+rcmd + rshift - q : yabai -m window --swap west
+
+# rotate tree
+rcmd + rshift - r : yabai -m space --rotate 90
+
+# toggle window split type
+rcmd + rshift - e : yabai -m window --toggle split
+
+# send window to monitor and follow focus
+rcmd + rshift - m : yabai -m window --display next; yabai -m display --focus next
+rcmd + rshift - l : yabai -m window --display prev; yabai -m display --focus prev
