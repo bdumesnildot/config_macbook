@@ -109,18 +109,24 @@ shift + ctrl - y : yabai --restart-service
 #                       #
 # ##################### #
 
+# num bar
+hyper - 0x12 : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Visual Studio Code" # 0x12 = "&"
+
+# special keys
 hyper - space : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Finder"
-hyper - f : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Finder"
-hyper - p : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "System Settings"
 hyper - return : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Warp"
-hyper - w : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Warp"
+
+# applications shortcuts
 hyper - a: /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Arc"
-hyper - v : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Visual Studio Code"
-hyper - i : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Insomnia"
 hyper - d : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Docker"
+hyper - i : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Insomnia"
 hyper - f : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Figma"
-hyper - s : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Slack"
 hyper - m : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Spotify"
+hyper - o : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Microsoft Outlook"
+hyper - p : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "System Settings"
+hyper - s : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Slack"
+hyper - v : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Visual Studio Code"
+hyper - w : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Warp"
 
 
 # ##################### #
