@@ -1,5 +1,7 @@
+.env
 configstore
 filezilla
 gcloud
 gh
 gtk-2.0
+raycast

@@ -42,59 +42,6 @@
                                 "type": "basic"
                             }
                         ]
-                    },
-                    {
-                        "description": "Tabs navigation (change cmd+opt+[right, left] to hyper+[right, left])",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_arrow",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command",
-                                            "left_control",
-                                            "left_option",
-                                            "left_shift"
-                                        ],
-                                        "optional": []
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_arrow",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_command",
-                                            "left_control",
-                                            "left_option",
-                                            "left_shift"
-                                        ],
-                                        "optional": []
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "left_command",
-                                            "left_option"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
                     }
                 ]
             },

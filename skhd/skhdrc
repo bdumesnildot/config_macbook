@@ -99,9 +99,19 @@
 #                       #
 # ##################### #
 
-shift + ctrl - s : skhd --restart-service --config /Users/bdumesnildot/.config/skhd/.skhdrc
-shift + ctrl - y : yabai --restart-service
+# shift + ctrl - s : skhd --restart-service --config /Users/bdumesnildot/.config/skhd/.skhdrc
+# shift + ctrl - y : yabai --restart-service
 
+# ##################### #
+#                       #
+#      Navigation       #
+#                       #
+# ##################### #
+
+# loop through windows
+# hyper - 0x7E : /Users/bdumesnildot/Scripts/yabai/windowSwitch.sh  # 0x7E up_arrow
+# hyper - 0x7D : /Users/bdumesnildot/Scripts/yabai/windowSwitch.sh  # 0x7D down_arrow
+hyper - 0x2E : /Users/bdumesnildot/Scripts/yabai/windowSwitch.sh # 0x2E = ","
 
 # ##################### #
 #                       #
@@ -117,16 +127,18 @@ hyper - space : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Finder"
 hyper - return : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Warp"
 
 # applications shortcuts
-hyper - a: /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Arc"
-hyper - d : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Docker"
+hyper - a : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Arc"
+hyper - d : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Docker Desktop"
 hyper - i : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Insomnia"
-hyper - f : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Figma"
+hyper - j : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Jalia Dev"
+hyper - l : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "AnythingLLM"
 hyper - m : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Spotify"
 hyper - o : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Microsoft Outlook"
 hyper - p : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "System Settings"
 hyper - s : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Slack"
 hyper - v : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Visual Studio Code"
 hyper - w : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Warp"
+hyper - x : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "WezTerm"
 
 
 # ##################### #
@@ -138,7 +150,7 @@ hyper - w : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Warp"
 ## LAYOUT MANAGEMENT
 # toggle tiling / floating
 rcmd - space : /Users/bdumesnildot/Scripts/yabai/toggleLayout.sh
-rcmd - 0x2E : yabai -m window --focus next || yabai -m window --focus first
+rcmd - 0x2E : yabai -m window --focus next || yabai -m window --focus first # 0x2E = ","
 
 
 ## MONITORS MANAGEMENT
