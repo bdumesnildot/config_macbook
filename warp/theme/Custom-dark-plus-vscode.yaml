@@ -1,5 +1,5 @@
 background: "#252526"
-accent: "#72C890"
+accent: "#72c890"
 foreground: "#545455"
 details: darker
 terminal_colors:
@@ -7,7 +7,7 @@ terminal_colors:
     black: "#1e1e1e"
     red: "#ea0000"
     green: "#6a9955"
-    yellow: "#fed700"
+    yellow: "#fdd600"
     blue: "#569cd6"
     magenta: "#d26dcf"
     cyan: "#9cdcfe"
@@ -15,8 +15,8 @@ terminal_colors:
   bright:
     black: "#333333"
     red: "#ef5350"
-    green: "#73c991"
-    yellow: "#c7c79b"
+    green: "#72c890"
+    yellow: "#dbdbA9"
     blue: "#4dbdfb"
     magenta: "#d26dcf"
     cyan: "#9cdcfe"

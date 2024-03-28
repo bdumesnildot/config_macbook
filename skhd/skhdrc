@@ -120,25 +120,25 @@ hyper - 0x2E : /Users/bdumesnildot/Scripts/yabai/windowSwitch.sh # 0x2E = ","
 # ##################### #
 
 # num bar
-hyper - 0x12 : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Visual Studio Code" # 0x12 = "&"
+hyper - 0x12 : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Visual Studio Code" # 0x12 = "&"
 
 # special keys
-hyper - space : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Finder"
-hyper - return : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Warp"
+hyper - space : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Finder"
+hyper - return : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Warp"
 
 # applications shortcuts
-hyper - a : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Arc"
-hyper - d : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Docker Desktop"
-hyper - i : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Insomnia"
-hyper - j : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Jalia Dev"
-hyper - l : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "AnythingLLM"
-hyper - m : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Spotify"
-hyper - o : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Microsoft Outlook"
-hyper - p : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "System Settings"
-hyper - s : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Slack"
-hyper - v : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Visual Studio Code"
-hyper - w : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "Warp"
-hyper - x : /Users/bdumesnildot/Scripts/yabai/handleApps.sh "WezTerm"
+hyper - a : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Arc"
+hyper - d : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Docker Desktop"
+hyper - i : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Insomnia"
+hyper - j : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Jalia Dev"
+hyper - l : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "AnythingLLM"
+hyper - m : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Spotify"
+hyper - o : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Microsoft Outlook"
+hyper - p : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "System Settings"
+hyper - s : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Slack"
+hyper - v : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Visual Studio Code"
+hyper - w : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Warp"
+hyper - x : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "WezTerm"
 
 
 # ##################### #
