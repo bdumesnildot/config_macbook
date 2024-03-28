@@ -1,7 +1,8 @@
-.env
 configstore
 filezilla
 gcloud
 gh
 gtk-2.0
-raycast
+**/extensions
+**/debug
+node_modules
