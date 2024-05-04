@@ -1,6 +1,6 @@
-# #!/bin/bash
+#!/bin/bash
 
-debug_log_file_path="/Users/bdumesnildot/Scripts/yabai/debug/windowSwitch.log"
+debug_log_file_path="/Users/bdumesnildot/.config/yabai/scripts/debug/windowSwitch.log"
 echo "" > "$debug_log_file_path"
 echo "windowSwitch - $(date)" >> "$debug_log_file_path"
 
