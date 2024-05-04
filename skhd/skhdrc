@@ -99,8 +99,8 @@
 #                       #
 # ##################### #
 
-# shift + ctrl - s : skhd --restart-service --config /Users/bdumesnildot/.config/skhd/.skhdrc
-# shift + ctrl - y : yabai --restart-service
+shift + ctrl - s : skhd --restart-service --config /Users/bdumesnildot/.config/skhd/.skhdrc
+shift + ctrl - y : yabai --restart-service
 
 # ##################### #
 #                       #
@@ -108,10 +108,7 @@
 #                       #
 # ##################### #
 
-# loop through windows
-# hyper - 0x7E : /Users/bdumesnildot/Scripts/yabai/windowSwitch.sh  # 0x7E up_arrow
-# hyper - 0x7D : /Users/bdumesnildot/Scripts/yabai/windowSwitch.sh  # 0x7D down_arrow
-hyper - 0x2E : /Users/bdumesnildot/Scripts/yabai/windowSwitch.sh # 0x2E = ","
+
 
 # ##################### #
 #                       #
@@ -129,9 +126,10 @@ hyper - return : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Warp"
 # applications shortcuts
 hyper - a : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Arc"
 hyper - d : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Docker Desktop"
+hyper - h : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Postman"
 hyper - i : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Insomnia"
 hyper - j : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Jalia Dev"
-hyper - l : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "AnythingLLM"
+hyper - l : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Open WebUI"
 hyper - m : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Spotify"
 hyper - o : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Microsoft Outlook"
 hyper - p : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "System Settings"
@@ -149,42 +147,44 @@ hyper - x : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "WezTerm"
 
 ## LAYOUT MANAGEMENT
 # toggle tiling / floating
-rcmd - space : /Users/bdumesnildot/Scripts/yabai/toggleLayout.sh
-rcmd - 0x2E : yabai -m window --focus next || yabai -m window --focus first # 0x2E = ","
-
-
-## MONITORS MANAGEMENT
-# focus previous / next space
-rcmd - m : yabai -m display --focus next
-rcmd - l : yabai -m display --focus prev
-
+rcmd - space : /Users/bdumesnildot/.config/yabai/scripts/toggleLayout.sh
 
 ## WINDOWS MANAGEMENT
+
 # toggle window fullscreen zoom
 rcmd + rshift - space : yabai -m window --toggle zoom-fullscreen
-
 # float / unfloat window and center on screen
 rcmd + rshift - f : yabai -m window --toggle float;\
                     yabai -m window --grid 4:4:1:1:2:2
 
 # focus window
+## loop through all windows
+hyper - 0x2E : /Users/bdumesnildot/.config/yabai/scripts/windowSwitch.sh # 0x2E = ","
+rcmd - 0x2B : /Users/bdumesnildot/.config/yabai/scripts/windowSwitch.sh # 0x2B = ";"
+## loop through windows of thhe current display
+rcmd - a : yabai -m window --focus next || yabai -m window --focus first
+
 rcmd - z : yabai -m window --focus north
 rcmd - d : yabai -m window --focus east
 rcmd - s : yabai -m window --focus south
 rcmd - q : yabai -m window --focus west
 
 # swap managed window
-rcmd + rshift - z : yabai -m window --swap north
-rcmd + rshift - d : yabai -m window --swap east
-rcmd + rshift - s : yabai -m window --swap south
-rcmd + rshift - q : yabai -m window --swap west
+ralt - z : yabai -m window --swap north
+ralt - d : yabai -m window --swap east
+ralt - s : yabai -m window --swap south
+ralt - q : yabai -m window --swap west
 
 # rotate tree
-rcmd + rshift - r : yabai -m space --rotate 90
+rcmd - r : yabai -m space --rotate 90
 
-# toggle window split type
-rcmd + rshift - e : yabai -m window --toggle split
+# Move window to next / previous space
+rcmd - 0x2F : /Users/bdumesnildot/.config/yabai/scripts/monitorSwitch.sh # 0x2F = ":"
 
-# send window to monitor and follow focus
-rcmd + rshift - m : yabai -m window --display next; yabai -m display --focus next
-rcmd + rshift - l : yabai -m window --display prev; yabai -m display --focus prev
+# increase window size
+## dx
+rcmd + shift - q : yabai -m window --resize right:-20:0 || yabai -m window --resize left:-20:0
+rcmd + shift - d : yabai -m window --resize right:20:0 || yabai -m window --resize left:20:0
+## dy
+rcmd + shift - z : yabai -m window --resize bottom:0:-20 || yabai -m window --resize top:0:-20
+rcmd + shift - s : yabai -m window --resize bottom:0:20 || yabai -m window --resize top:0:20

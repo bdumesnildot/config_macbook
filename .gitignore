@@ -3,6 +3,11 @@ filezilla
 gcloud
 gh
 gtk-2.0
+karabiner
+!karabiner/karabiner.json
+medusa
+simple-update-notifier
+
 **/extensions
 **/debug
 node_modules

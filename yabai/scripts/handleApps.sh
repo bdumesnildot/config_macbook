@@ -1,6 +1,6 @@
 #!/bin/bash
 
-debug_log_file_path="/Users/bdumesnildot/Scripts/yabai/debug/handleApps.log"
+debug_log_file_path="/Users/bdumesnildot/.config/yabai/scripts/debug/handleApps.log"
 app_name="$1"
 
 echo "" > "$debug_log_file_path"
