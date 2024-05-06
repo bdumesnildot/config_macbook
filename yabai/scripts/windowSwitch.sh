@@ -49,7 +49,7 @@ function find_next_space_with_win() {
   echo "$cur_space"
 }
 
-# Set the focus to a new windo
+# Set the focus to a new window
 next_space_with_win=$(find_next_space_with_win "$cur_space_index")
 next_win_id=$(echo "$next_space_with_win" | jq '[."first-window"][0]')
 if [[ $next_win_id == 0 ]]; then
