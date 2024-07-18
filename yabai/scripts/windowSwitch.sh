@@ -68,5 +68,4 @@ else
     yabai -m window --focus next || yabai -m window --focus "$next_win_id"
 fi
 
-
 # echo "current window: $(yabai -m query --windows --window )" >> "$debug_log_file_path"
