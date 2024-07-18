@@ -7,7 +7,11 @@ karabiner
 !karabiner/karabiner.json
 medusa
 simple-update-notifier
+qBittorrent
+yarn
 
 **/extensions
 **/debug
 node_modules
+
+.DS_Store
