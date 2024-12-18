@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH="/opt/homebrew/bin:$PATH"
 
 debug_log_file_path="/Users/bdumesnildot/.config/yabai/scripts/debug/monitorSwitch.log"
 echo "" > "$debug_log_file_path"
@@ -50,3 +51,6 @@ fi
 
 # Swap the moved window with the last focused window
 yabai -m window --swap last
+
+# Log to console
+echo "Switched to next monitor (id: $next_space_index)"
