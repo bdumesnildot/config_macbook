@@ -110,26 +110,29 @@ shift + ctrl - y : yabai --restart-service
 # ##################### #
 
 # num bar
-hyper - 0x12 : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Visual Studio Code" # 0x12 = "&" or "1"
-hyper - 0x13 : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Postman" # 0x13 = "é" or "2"
-hyper - 0x1D : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "System Settings" # 0x1D = "à" or "0"
-hyper - 0x1B : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Activity Monitor" # 0x1B = ")"
+# hyper - 0x12 : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Visual Studio Code" # 0x12 = "&" or "1"
+# hyper - 0x13 : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Postman" # 0x13 = "é" or "2"
+# hyper - 0x14 : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "DBeaver" # 0x13 = `"` or "3"
+# hyper - 0x1D : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "System Settings" # 0x1D = "à" or "0"
+# hyper - 0x1B : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Activity Monitor" # 0x1B = ")"
 
 # special keys
-hyper - space : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Finder"
-hyper - return : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Warp"
+# hyper - space : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Finder"
+# hyper - return : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Warp"
 
 # applications shortcuts
-hyper - a : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Arc"
-hyper - b : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Beeper"
-hyper - c : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Jalia Dev"
-hyper - d : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Docker Desktop"
+# hyper - a : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Arc"
+# hyper - b : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Beeper"
+# hyper - c : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Popina Dev"
+# hyper - d : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Docker Desktop"
 ## no i j k l  beacause they are used as vim navigation keys
-hyper - m : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Spotify"
-hyper - n : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Notion"
-hyper - q : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Open WebUI"
-hyper - o : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Microsoft Outlook"
-hyper - s : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Slack"
+# hyper - m : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Spotify"
+# hyper - n : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Notion"  
+# hyper - q : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Open WebUI"
+# hyper - o : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Microsoft Outlook"
+# hyper - s : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Slack"
+# hyper - w : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Open WebUI"
+# hyper - z : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Linear"
 
 
 # ##################### #
@@ -140,35 +143,34 @@ hyper - s : /Users/bdumesnildot/.config/yabai/scripts/handleApps.sh "Slack"
 
 ## LAYOUT MANAGEMENT
 # toggle tiling / floating
-rcmd - space : /Users/bdumesnildot/.config/yabai/scripts/toggleLayout.sh
+# rcmd - space : /Users/bdumesnildot/.config/yabai/scripts/toggleLayout.sh
 
 ## WINDOWS MANAGEMENT
 
 # toggle window fullscreen zoom
-rcmd + rshift - space : yabai -m window --toggle zoom-fullscreen
+# rcmd + rshift - space : yabai -m window --toggle zoom-fullscreen
 # float / unfloat window and center on screen
-rcmd + rshift - f : yabai -m window --toggle float;\
-                    yabai -m window --grid 4:4:1:1:2:2
+# rcmd + rshift - f : yabai -m window --toggle float;\
+#                     yabai -m window --grid 4:4:1:1:2:2
 
 # focus window
 ## loop through all windows
-rcmd - 0x2B : /Users/bdumesnildot/.config/yabai/scripts/windowSwitch.sh # 0x2B = ";"
+# rcmd - 0x2B : /Users/bdumesnildot/.config/yabai/scripts/windowSwitch.sh # 0x2B = ";"
 ## loop through windows of thhe current display
-rcmd - a : yabai -m window --focus next || yabai -m window --focus first
-rcmd - z : yabai -m window --focus north
-rcmd - d : yabai -m window --focus east
-rcmd - s : yabai -m window --focus south
-rcmd - q : yabai -m window --focus west
+ralt - u : yabai -m window --focus next || yabai -m window --focus first
+ralt - i : yabai -m window --focus north
+ralt - l : yabai -m window --focus east
+ralt - k : yabai -m window --focus south
+ralt - j : yabai -m window --focus west
 
 # focus display
-rcmd + shift - z : yabai -m display --focus north
-rcmd + shift - d : yabai -m display --focus east
-rcmd + shift - s : yabai -m display --focus south
-rcmd + shift - q : yabai -m display --focus west
+ralt + shift - i : yabai -m display --focus north
+ralt + shift - l : yabai -m display --focus east
+ralt + shift - k : yabai -m display --focus south
+ralt + shift - j : yabai -m display --focus west
 
 # Move window to next / previous space
 rcmd - 0x2F : /Users/bdumesnildot/.config/yabai/scripts/monitorSwitch.sh # 0x2F = ":"
-ralt - 0x2F : /Users/bdumesnildot/.config/yabai/scripts/monitorSwitch.sh # 0x2F = ":"
 
 # rotate tree
 ralt - r : yabai -m space --rotate 90

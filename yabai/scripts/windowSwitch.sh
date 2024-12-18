@@ -1,4 +1,5 @@
 #!/bin/bash
+PATH="/opt/homebrew/bin:$PATH"
 
 debug_log_file_path="/Users/bdumesnildot/.config/yabai/scripts/debug/windowSwitch.log"
 echo "" > "$debug_log_file_path"
@@ -58,14 +59,19 @@ fi
 
 echo "cur_space: $cur_space" >> "$debug_log_file_path"
 echo "next_space_with_win: $next_space_with_win" >> "$debug_log_file_path"
-echo "next_win_id: $next_win_id" >> "$debug_log_file_path"
+echo "cur_window: $cur_window" >> "$debug_log_file_path"
+echo "next_win: $(yabai -m query --windows --window "$next_win_id")" >> "$debug_log_file_path"
 
 if echo "$cur_space" | jq '[."type"]' | grep -qi "float"; then
-    echo "==> float case" >> "$debug_log_file_path"
+    echo "==> layout float case" >> "$debug_log_file_path"
     yabai -m window --focus "$next_win_id"
 else
-    echo "==> no float case" >> "$debug_log_file_path"
-    yabai -m window --focus next || yabai -m window --focus "$next_win_id"
+    echo "==> layout bsp case" >> "$debug_log_file_path"
+    yabai -m window --focus next 2>/dev/null || yabai -m window --focus "$next_win_id" 2>/dev/null
 fi
 
 # echo "current window: $(yabai -m query --windows --window )" >> "$debug_log_file_path"
+
+# Log to console
+cur_window_name=$(yabai -m query --windows --window | jq -r '.app')
+echo "Yabai switch to window: $cur_window_name"
